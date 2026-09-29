@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Milena Monova</title>
+<meta name="description" content="Milena Monova, engineering and technology leader. Backend engineer, CTO and co-founder, now leading and growing engineering teams in small companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a narrow sticky left rail (name, contact) beside one reading column; stacks to a single column on phones. */
+:root {
+  --ground: #F1F3EF;      /* pale green-grey paper */
+  --surface: #FAFBF8;
+  --ink: #18201C;
+  --ink-soft: #4B5650;
+  --rule: #D5DAD3;
+  --accent: #2F45C8;      /* marking-pen blue */
+  --accent-soft: #E3E7F7;
+  --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body: "Newsreader", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #121614; --surface: #1A1F1C; --ink: #E6EAE5; --ink-soft: #A3ADA6;
+    --rule: #2E3531; --accent: #93A4FF; --accent-soft: #22284A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #121614; --surface: #1A1F1C; --ink: #E6EAE5; --ink-soft: #A3ADA6;
+  --rule: #2E3531; --accent: #93A4FF; --accent-soft: #22284A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+img { max-width: 100%; }
+body {
+  background: var(--ground); color: var(--ink);
+  font-family: var(--body); font-size: 1.125rem; line-height: 1.6;
+  padding-inline: 16px; padding-block: 0;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+
+.page {
+  max-width: 1120px; margin-inline: auto;
+  display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 72px;
+  padding-block: 64px 96px;
+}
+
+/* ——— rail ——— */
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 48px); align-self: start; display: grid; gap: 28px; }
+.rail h1 { font-size: 2rem; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+.role { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-top: 10px; line-height: 1.5; }
+.rail nav { display: grid; gap: 6px; font-family: var(--display); font-size: 0.95rem; }
+.rail nav a { color: var(--ink); text-decoration: none; }
+.rail nav a:hover { color: var(--accent); }
+.contact { display: grid; gap: 8px; font-size: 0.95rem; }
+.email-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.email { font-family: var(--mono); font-size: 0.82rem; user-select: all; overflow-wrap: anywhere; }
+.copy {
+  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase;
+  background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px;
+  padding: 2px 7px; cursor: pointer;
+}
+.copy:hover { background: var(--accent-soft); }
+.meta { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
+
+/* ——— main ——— */
+main { display: grid; gap: 96px; min-width: 0; }
+section { display: grid; gap: 28px; min-width: 0; }
+.eyebrow { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+
+.intro { display: grid; gap: 22px; max-width: 40rem; }
+.intro .lede { font-family: var(--display); font-size: clamp(1.6rem, 3.4vw, 2.35rem); font-weight: 600; line-height: 1.18; letter-spacing: -0.02em; text-wrap: balance; }
+.intro p:not(.lede) { color: var(--ink-soft); max-width: 36rem; }
+
+/* the lead recommendation */
+.lead-quote {
+  margin: 8px 0 0; padding: 28px 0 0; border-top: 2px solid var(--ink);
+  display: grid; gap: 18px; max-width: 44rem;
+}
+.lead-quote blockquote { margin: 0; font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 1.45; font-style: italic; }
+.lead-quote blockquote mark { background: var(--accent-soft); color: inherit; padding: 0 2px; font-style: italic; }
+
+.who { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; }
+.who strong { font-family: var(--display); font-size: 0.95rem; color: var(--ink); font-weight: 600; letter-spacing: 0; display: block; margin-bottom: 2px; }
+
+/* other recommendations */
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
+.quotes figure { margin: 0; display: grid; gap: 14px; align-content: start; padding-top: 18px; border-top: 1px solid var(--rule); }
+.quotes blockquote { margin: 0; font-style: italic; font-size: 1.05rem; line-height: 1.55; }
+.quotes .wide { grid-column: 1 / -1; }
+.pattern { color: var(--ink-soft); max-width: 38rem; font-size: 1.02rem; }
+
+/* case studies */
+.story { display: grid; gap: 20px; padding: 36px; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; min-width: 0; }
+.story-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 20px; flex-wrap: wrap; }
+.story h3 { font-size: clamp(1.35rem, 2.4vw, 1.65rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
+.story .org { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); white-space: nowrap; }
+.story > p { max-width: 40rem; }
+.arc { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.arc li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 20px; padding: 16px 0; border-top: 1px solid var(--rule); }
+.arc li:last-child { border-bottom: 1px solid var(--rule); }
+.arc .when { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; padding-top: 3px; font-variant-numeric: tabular-nums; }
+.arc .when b { display: block; font-family: var(--display); font-size: 0.95rem; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
+.arc p { font-size: 1.02rem; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.facts span { font-family: var(--mono); font-size: 0.75rem; padding: 4px 9px; border-radius: 3px; background: var(--accent-soft); color: var(--ink); }
+
+/* earlier career timeline */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.timeline li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 20px; padding: 18px 0; border-top: 1px solid var(--rule); }
+.timeline li:last-child { border-bottom: 1px solid var(--rule); }
+.timeline .when { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-soft); padding-top: 4px; font-variant-numeric: tabular-nums; }
+.timeline h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 4px; }
+.timeline h3 span { font-weight: 400; color: var(--ink-soft); }
+.timeline p { font-size: 1rem; color: var(--ink-soft); }
+
+/* how I work / looking for */
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
+.two h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+.two p { font-size: 1.02rem; color: var(--ink-soft); }
+.skills { font-family: var(--mono); font-size: 0.82rem; line-height: 1.9; color: var(--ink-soft); max-width: 44rem; }
+
+.closing { padding: 40px; border: 2px solid var(--ink); border-radius: 4px; display: grid; gap: 16px; }
+.closing h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.02em; }
+.closing p { max-width: 36rem; }
+.closing .links { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; font-family: var(--display); }
+
+h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; }
+
+@media (max-width: 860px) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 48px; padding-block: 36px 64px; }
+  .rail { position: static; gap: 20px; }
+  .rail nav { display: none; }
+  main { gap: 72px; }
+  .quotes, .two { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .story { padding: 22px; }
+  .arc li, .timeline li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .closing { padding: 24px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="page">
+  <aside class="rail">
+    <div>
+      <h1>Milena<br>Monova</h1>
+      <p class="role">Engineering &amp; Technology Leader</p>
+    </div>
+    <nav aria-label="Sections">
+      <a href="#recommendations">What people say</a>
+      <a href="#work">Work</a>
+      <a href="#earlier">Earlier</a>
+      <a href="#approach">How I work</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="contact">
+      <div class="email-row">
+        <span class="email" id="email">mimonova13@gmail.com</span>
+        <button class="copy" id="copy-email" type="button">Copy</button>
+      </div>
+      <a href="https://www.linkedin.com/in/milena-monova/">LinkedIn</a>
+      <a href="https://github.com/migrenaa">GitHub</a>
+    </div>
+    <p class="meta">Sofia, Bulgaria<br>Remote · European hours</p>
+  </aside>
+
+  <main>
+    <section class="intro" aria-label="Introduction">
+      <p class="lede">I lead engineering teams in small companies, and I care most about helping engineers grow into the people their team relies on.</p>
+      <p>I started as a backend engineer ten years ago, co-founded a venture-backed startup as CTO, built a product from research to working software, and now lead the engineering team at a food supply-chain company. Alongside engineering, I taught maths for eight years.</p>
+
+      <figure class="lead-quote">
+        <blockquote>“Milena is a hugely talented engineer and technology leader. … She is a purpose driven, emotionally intelligent, technically gifted engineer, manager and leader. She is a <mark>courageous, direct, demanding and caring leader</mark> in a quite exceptional melange of skills. I wish I could have her working full time in my team forever.”</blockquote>
+        <figcaption class="who"><strong>Rich Osborn</strong>CEO, Equilibrium Markets · managed Milena directly · 2026</figcaption>
+      </figure>
+    </section>
+
+    <section id="recommendations">
+      <p class="eyebrow">What people say</p>
+      <h2 class="section-title">Seven years apart, the same description</h2>
+      <div class="quotes">
+        <figure class="wide">
+          <blockquote>“She naturally drew team members to her and helped them evolve through leading by example and mentoring them. … The company founders often sought her opinion on HR, project management and client related topics. She was also integral to the closing of Centroida’s acquisition by ScaleFocus and seamlessly managed the smooth transition of the team.”</blockquote>
+          <figcaption class="who"><strong>Angel Kelchev</strong>CEO at Centroida, managed Milena directly · 2019</figcaption>
+        </figure>
+        <figure>
+          <blockquote>“She was usually the very first person to identify and address problems, potential issues and engineering challenges, by both communicating them to the team and solving them personally at implementation level.”</blockquote>
+          <figcaption class="who"><strong>Pavel Pavlov</strong>Engineering Lead, worked with Milena · 2019</figcaption>
+        </figure>
+        <figure>
+          <blockquote>“She’s reliable, autonomous, thorough, organized, a quick learner and a great engineer with immense potential. She communicates effectively both internally within the team and externally with customers and partners.”</blockquote>
+          <figcaption class="who"><strong>Alexander Kolev</strong>Managed Milena directly · 2019</figcaption>
+        </figure>
+      </div>
+      <p class="pattern">Full recommendations are on <a href="https://www.linkedin.com/in/milena-monova/details/recommendations/">LinkedIn</a>.</p>
+    </section>
+
+    <section id="work">
+      <p class="eyebrow">Work</p>
+      <h2 class="section-title">Three pieces of work</h2>
+
+      <article class="story">
+        <div class="story-head">
+          <h3>Growing with a team, from integrations to leading it</h3>
+          <span class="org">Equilibrium Markets · 2024 – now</span>
+        </div>
+        <p>Equilibrium Markets helps UK public-sector buyers source local food with more transparency. I joined part-time to build one piece of the platform and have taken on a bigger role each year as the team needed it.</p>
+        <ol class="arc">
+          <li>
+            <div class="when"><b>Integration Lead</b>2024 – 2025</div>
+            <p>Joined at 20% FTE to help build the platform from scratch. Designed and built integrations with four food distributors over EDI, FTP and their own standards, plus an API integration with Erudus. I worked directly with each distributor’s technical team, and all five went into production.</p>
+          </li>
+          <li>
+            <div class="when"><b>Technical Product Manager</b>2025 – 2026</div>
+            <p>Stepped in when the team was working against unclear requirements and a short deadline to get the platform ready for its first users. I worked with the Supply Chain Manager to turn needs into specs before they reached engineering, introduced the team’s first roadmap and a RICE prioritisation framework, and ran the Scrum process. We met the onboarding deadline, and developers stopped guessing what mattered.</p>
+          </li>
+          <li>
+            <div class="when"><b>Engineering Team Director</b>2026 – now</div>
+            <p>Now I lead and coach the team. I built a 12-month upskilling programme that connects each engineer’s goals with what the company needs, with mentoring pairs, targeted assignments and a learning budget. It spread knowledge and ownership so the Tech Lead is no longer a single point of failure. I also started Prototype Days, coached the team through them, and handed the process over so it now runs without me. I defined and hired for the team’s first dedicated QA role.</p>
+          </li>
+        </ol>
+        <div class="facts"><span>5 integrations in production</span><span>First roadmap</span><span>12-month growth programme</span><span>First QA hire</span></div>
+      </article>
+
+      <article class="story">
+        <div class="story-head">
+          <h3>From a research question to software people kept using</h3>
+          <span class="org">Collabberry · 2024 – 2025</span>
+        </div>
+        <p>How should small, collaborative teams share money fairly when contributions change month to month? I spent a three-month RnDAO fellowship researching that question and published a paper and a model for compensation based on peer-assessed contribution.</p>
+        <ol class="arc">
+          <li>
+            <div class="when"><b>Test by hand</b></div>
+            <p>Before writing code, I ran the method, TeamPoints, with Excel and Google Forms. Five to ten organisations used it for monthly compensation cycles for several months.</p>
+          </li>
+          <li>
+            <div class="when"><b>Fund it</b></div>
+            <p>Secured about $38k in grants and public-goods funding, including an Arbitrum grant and Gitcoin. We paid our own contributors with the Collabberry model, which stretched the runway.</p>
+          </li>
+          <li>
+            <div class="when"><b>Build it</b></div>
+            <p>Led product decisions and built the backend, smart contracts and infrastructure, working with contributors in frontend, design, product and marketing. The organisations from the manual phase moved onto the software and kept using it after I stepped away.</p>
+          </li>
+        </ol>
+        <div class="facts"><span>Research paper</span><span>~$38k raised</span><span>Smart contracts</span><span>5–10 pilot organisations</span><span>Still in use</span></div>
+      </article>
+
+      <article class="story">
+        <div class="story-head">
+          <h3>Co-founding a company and building its technology</h3>
+          <span class="org">Āut Labs · CTO &amp; co-founder · 2020 – 2023</span>
+        </div>
+        <p>Āut Labs builds tools that help online communities handle membership, roles and decision-making. It started as a hackathon project. After winning an early Web3 hackathon and joining the Filecoin Launchpad Accelerator, we turned it into a startup backed by nearly €2M in pre-seed funding.</p>
+        <ol class="arc">
+          <li>
+            <div class="when"><b>Architecture</b></div>
+            <p>Designed and built the core blockchain protocol, which put each member’s identity, skills and roles on-chain. Membership, permissions and governance in the rest of the product are built on it.</p>
+          </li>
+          <li>
+            <div class="when"><b>Team</b></div>
+            <p>Hired and led frontend, full-stack and smart-contract developers, and stayed hands-on with protocol work. I owned architecture, delivery and mentoring.</p>
+          </li>
+          <li>
+            <div class="when"><b>Learning from developers</b></div>
+            <p>We took the first developer product to market through hackathons like ETHGlobal and used sponsored bounties to watch outside developers try our docs and APIs. What we saw led me to drive a pivot from login and identity infrastructure to a modular platform for running digital organisations.</p>
+          </li>
+          <li>
+            <div class="when"><b>Fundraising</b></div>
+            <p>In the Filecoin Launchpad Accelerator, powered by Tachyon, we worked with mentors and advisors to shape our pitch deck. I prepared the technical materials for investors and joined investor calls. We also worked with ecosystem partners including Polygon.</p>
+          </li>
+        </ol>
+        <div class="facts"><span>~€2M pre-seed</span><span>Blockchain protocol design</span><span>Filecoin Launchpad</span><span>Product pivot</span></div>
+      </article>
+    </section>
+
+    <section id="earlier">
+      <p class="eyebrow">Earlier</p>
+      <h2 class="section-title">Where it started</h2>
+      <ol class="timeline">
+        <li>
+          <span class="when">2020 – 2021</span>
+          <div><h3>Software Architect <span>· Equilibrium Markets</span></h3>
+          <p>Modernised the architecture of a legacy supply-chain platform, making it more reliable and easier to build on.</p></div>
+        </li>
+        <li>
+          <span class="when">2019 – 2020</span>
+          <div><h3>Software Engineer <span>· ScaleFocus</span></h3>
+          <p>Designed backend and distributed systems for a US healthcare product built from the ground up, in Node.js and Go.</p></div>
+        </li>
+        <li>
+          <span class="when">2016 – 2019</span>
+          <div><h3>Software Engineer <span>· Centroida</span></h3>
+          <p>One of the early hires. Built backend and distributed systems across several products, mentored newer engineers, worked directly with clients, and helped the team through Centroida’s acquisition by ScaleFocus.</p></div>
+        </li>
+        <li>
+          <span class="when">2016 – 2024</span>
+          <div><h3>Mathematics teacher <span>· Independent</span></h3>
+          <p>Taught secondary-school maths, mostly to students who struggled with the usual approach. I changed how I taught for each student, focusing on understanding over memorising. That is still how I think about helping engineers grow.</p></div>
+        </li>
+        <li>
+          <span class="when">2014 – 2018</span>
+          <div><h3>BSc Computer Science <span>· Sofia University</span></h3></div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="approach">
+      <p class="eyebrow">How I work</p>
+      <div class="two">
+        <div>
+          <h3>Growth plans that the company needs too</h3>
+          <p>A development plan is useful when it connects what someone wants to learn with work the team actually has. I pair people with mentors and give them real responsibility.</p>
+        </div>
+        <div>
+          <h3>Test cheaply before building</h3>
+          <p>A spreadsheet run for months, a one-day prototype, a hackathon bounty. I like to learn what matters before the team commits to building it.</p>
+        </div>
+        <div>
+          <h3>Enough structure to stop guessing</h3>
+          <p>Roadmaps, clear ownership, specs before code. Just enough process that engineers know what matters and why.</p>
+        </div>
+        <div>
+          <h3>Close to the technology</h3>
+          <p>I’ve built supply-chain integrations, a blockchain protocol and distributed systems myself. I use that when making technical calls with a team, while leaving the code to them.</p>
+        </div>
+      </div>
+      <p class="skills">Engineering leadership · people development · hiring · software architecture · backend &amp; distributed systems · Node.js · .NET · Go · APIs &amp; integrations (EDI, FTP) · Kafka · blockchain protocols &amp; smart contracts · product discovery · user research · roadmaps &amp; prioritisation</p>
+    </section>
+
+    <section id="contact" class="closing">
+      <p class="eyebrow">What I’m looking for</p>
+      <h2>Leading engineering in a small company, close to product</h2>
+      <p>Depending on what a company needs, that could mean managing and growing the engineering team, or working where product and technology meet, turning what users and the business need into work a team can build. I’ve done both at Equilibrium Markets.</p>
+      <p>I want to work on something I believe is useful, in a team small enough that my work is visible. Remote, European hours, based in Sofia.</p>
+      <div class="links">
+        <span class="email-row"><span class="email" id="email-2">mimonova13@gmail.com</span><button class="copy" id="copy-email-2" type="button">Copy</button></span>
+        <a href="https://www.linkedin.com/in/milena-monova/">LinkedIn</a>
+        <a href="https://github.com/migrenaa">GitHub</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+  function wireCopy(btnId, textId) {
+    var btn = document.getElementById(btnId), el = document.getElementById(textId);
+    btn.addEventListener('click', function () {
+      var text = el.textContent.trim();
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+      var fallback = function () {
+        var r = document.createRange(); r.selectNodeContents(el);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Selected';
+        setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+      };
+      try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+    });
+  }
+  wireCopy('copy-email', 'email');
+  wireCopy('copy-email-2', 'email-2');
+</script>
+
+</body>
+</html>
