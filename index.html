@@ -3,11 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Milena Monova · Engineering &amp; Technology Leader">
+<meta property="og:description" content="Engineering leader in small companies. Backend engineer, CTO and co-founder, now leading and growing an engineering team.">
+<meta property="og:url" content="https://migrenaa.github.io/">
+<meta property="og:image" content="https://migrenaa.github.io/profile-pic.jpeg">
+<meta name="twitter:card" content="summary">
 <title>Milena Monova</title>
 <meta name="description" content="Milena Monova, engineering and technology leader. Backend engineer, CTO and co-founder, now leading and growing engineering teams in small companies.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap">
 <style>
 /* Layout: a narrow sticky left rail (name, contact) beside one reading column; stacks to a single column on phones. */
 :root {
@@ -20,7 +26,6 @@
   --accent-soft: #E3E7F7;
   --display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
   --body: "Newsreader", Georgia, "Times New Roman", serif;
-  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -56,26 +61,26 @@ p { margin: 0; }
 
 /* ——— rail ——— */
 .rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 48px); align-self: start; display: grid; gap: 28px; }
+.photo { width: 168px; height: 168px; object-fit: cover; border-radius: 4px; display: block; }
 .rail h1 { font-size: 2rem; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
-.role { font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); margin-top: 10px; line-height: 1.5; }
+.role { font-family: var(--display); font-size: 0.95rem; color: var(--ink-soft); margin-top: 8px; line-height: 1.4; }
 .rail nav { display: grid; gap: 6px; font-family: var(--display); font-size: 0.95rem; }
 .rail nav a { color: var(--ink); text-decoration: none; }
 .rail nav a:hover { color: var(--accent); }
 .contact { display: grid; gap: 8px; font-size: 0.95rem; }
 .email-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-.email { font-family: var(--mono); font-size: 0.82rem; user-select: all; overflow-wrap: anywhere; }
+.email { font-family: var(--display); font-size: 0.9rem; user-select: all; overflow-wrap: anywhere; }
 .copy {
-  font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase;
+  font-family: var(--display); font-size: 0.75rem;
   background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 3px;
   padding: 2px 7px; cursor: pointer;
 }
 .copy:hover { background: var(--accent-soft); }
-.meta { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
+.meta { font-family: var(--display); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.6; }
 
 /* ——— main ——— */
 main { display: grid; gap: 96px; min-width: 0; }
 section { display: grid; gap: 28px; min-width: 0; }
-.eyebrow { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
 
 .intro { display: grid; gap: 22px; max-width: 40rem; }
 .intro .lede { font-family: var(--display); font-size: clamp(1.6rem, 3.4vw, 2.35rem); font-weight: 600; line-height: 1.18; letter-spacing: -0.02em; text-wrap: balance; }
@@ -89,7 +94,7 @@ section { display: grid; gap: 28px; min-width: 0; }
 .lead-quote blockquote { margin: 0; font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 1.45; font-style: italic; }
 .lead-quote blockquote mark { background: var(--accent-soft); color: inherit; padding: 0 2px; font-style: italic; }
 
-.who { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; }
+.who { font-family: var(--display); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; }
 .who strong { font-family: var(--display); font-size: 0.95rem; color: var(--ink); font-weight: 600; letter-spacing: 0; display: block; margin-bottom: 2px; }
 
 /* other recommendations */
@@ -103,22 +108,20 @@ section { display: grid; gap: 28px; min-width: 0; }
 .story { display: grid; gap: 20px; padding: 36px; background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; min-width: 0; }
 .story-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px 20px; flex-wrap: wrap; }
 .story h3 { font-size: clamp(1.35rem, 2.4vw, 1.65rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
-.story .org { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); white-space: nowrap; }
+.story .org { font-family: var(--display); font-size: 0.78rem; color: var(--ink-soft); white-space: nowrap; }
 .story > p { max-width: 40rem; }
 .arc { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .arc li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 20px; padding: 16px 0; border-top: 1px solid var(--rule); }
 .arc li:last-child { border-bottom: 1px solid var(--rule); }
-.arc .when { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; padding-top: 3px; font-variant-numeric: tabular-nums; }
+.arc .when { font-family: var(--display); font-size: 0.78rem; color: var(--ink-soft); line-height: 1.5; padding-top: 3px; font-variant-numeric: tabular-nums; }
 .arc .when b { display: block; font-family: var(--display); font-size: 0.95rem; color: var(--ink); font-weight: 600; margin-bottom: 2px; }
 .arc p { font-size: 1.02rem; }
-.facts { display: flex; flex-wrap: wrap; gap: 8px; }
-.facts span { font-family: var(--mono); font-size: 0.75rem; padding: 4px 9px; border-radius: 3px; background: var(--accent-soft); color: var(--ink); }
 
 /* earlier career timeline */
 .timeline { list-style: none; margin: 0; padding: 0; }
 .timeline li { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 20px; padding: 18px 0; border-top: 1px solid var(--rule); }
 .timeline li:last-child { border-bottom: 1px solid var(--rule); }
-.timeline .when { font-family: var(--mono); font-size: 0.8rem; color: var(--ink-soft); padding-top: 4px; font-variant-numeric: tabular-nums; }
+.timeline .when { font-family: var(--display); font-size: 0.8rem; color: var(--ink-soft); padding-top: 4px; font-variant-numeric: tabular-nums; }
 .timeline h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 4px; }
 .timeline h3 span { font-weight: 400; color: var(--ink-soft); }
 .timeline p { font-size: 1rem; color: var(--ink-soft); }
@@ -127,7 +130,7 @@ section { display: grid; gap: 28px; min-width: 0; }
 .two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
 .two h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
 .two p { font-size: 1.02rem; color: var(--ink-soft); }
-.skills { font-family: var(--mono); font-size: 0.82rem; line-height: 1.9; color: var(--ink-soft); max-width: 44rem; }
+.skills { font-family: var(--display); font-size: 0.82rem; line-height: 1.9; color: var(--ink-soft); max-width: 44rem; }
 
 .closing { padding: 40px; border: 2px solid var(--ink); border-radius: 4px; display: grid; gap: 16px; }
 .closing h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; letter-spacing: -0.02em; }
@@ -140,13 +143,14 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
 /* at a glance */
 .glance { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 4px 0 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); max-width: 44rem; }
 .glance div { padding: 14px 16px 14px 0; display: grid; gap: 3px; align-content: start; }
-.glance dt { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+.glance dt { font-family: var(--display); font-size: 0.82rem; color: var(--ink-soft); }
 .glance dd { margin: 0; font-family: var(--display); font-size: 0.98rem; line-height: 1.35; color: var(--ink); }
 @media (max-width: 560px) { .glance { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 @media (max-width: 860px) {
   .page { grid-template-columns: minmax(0, 1fr); gap: 48px; padding-block: 36px 64px; }
   .rail { position: static; gap: 20px; }
+  .photo { width: 112px; height: 112px; }
   .rail nav { display: none; }
   main { gap: 72px; }
   .quotes, .two { grid-template-columns: minmax(0, 1fr); gap: 28px; }
@@ -164,14 +168,15 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
 
 <div class="page">
   <aside class="rail">
+    <img class="photo" src="profile-pic.jpeg" alt="Milena Monova speaking at an event" width="400" height="400">
     <div>
       <h1>Milena<br>Monova</h1>
       <p class="role">Engineering &amp; Technology Leader</p>
     </div>
     <nav aria-label="Sections">
-      <a href="#recommendations">What people say</a>
+      <a href="#recommendations">Recommendations</a>
       <a href="#work">Work</a>
-      <a href="#earlier">Earlier</a>
+      <a href="#earlier">Earlier roles</a>
       <a href="#approach">How I work</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -208,8 +213,7 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
     </section>
 
     <section id="recommendations">
-      <p class="eyebrow">What people say</p>
-      <h2 class="section-title">Seven years apart, the same description</h2>
+      <h2 class="section-title">Recommendations</h2>
       <div class="quotes">
         <figure class="wide">
           <blockquote>“She naturally drew team members to her and helped them evolve through leading by example and mentoring them. … The company founders often sought her opinion on HR, project management and client related topics. She was also integral to the closing of Centroida’s acquisition by ScaleFocus and seamlessly managed the smooth transition of the team.”</blockquote>
@@ -228,8 +232,7 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
     </section>
 
     <section id="work">
-      <p class="eyebrow">Work</p>
-      <h2 class="section-title">Three pieces of work</h2>
+      <h2 class="section-title">Work</h2>
 
       <article class="story">
         <div class="story-head">
@@ -251,7 +254,6 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
             <p>Now I lead and coach a team of five and report to the CEO.I built a 12-month upskilling programme that connects each engineer’s goals with what the company needs, with mentoring pairs, targeted assignments and a learning budget. It spread knowledge and ownership so the Tech Lead is no longer a single point of failure. I also started Prototype Days, coached the team through them, and handed the process over so it now runs without me. I built the team’s onboarding structure, covering the product, delivery process, testing practices and technical setup, and defined and hired for the team’s first dedicated QA role. I’m also setting how the company uses AI and what that means for the engineering team, and AI skills are part of the upskilling programme.</p>
           </li>
         </ol>
-        <div class="facts"><span>5 integrations in production</span><span>First roadmap</span><span>12-month growth programme</span><span>First QA hire</span><span>AI adoption</span><span>Schools &amp; hospitals ordering</span></div>
       </article>
 
       <article class="story">
@@ -274,7 +276,6 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
             <p>Led product decisions and built the backend, smart contracts and infrastructure, working with contributors in frontend, design, product and marketing. The organisations from the manual phase moved onto the software and kept using it after I stepped away.</p>
           </li>
         </ol>
-        <div class="facts"><span>Research paper</span><span>~$38k raised</span><span>Smart contracts</span><span>5–10 pilot organisations</span><span>Still in use</span></div>
       </article>
 
       <article class="story">
@@ -301,13 +302,11 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
             <p>In the Filecoin Launchpad Accelerator, powered by Tachyon, we worked with mentors and advisors to shape our pitch deck. I prepared the technical materials for investors and joined investor calls. We also worked with ecosystem partners including Polygon.</p>
           </li>
         </ol>
-        <div class="facts"><span>~€2M pre-seed</span><span>Blockchain protocol design</span><span>Filecoin Launchpad</span><span>Product pivot</span></div>
       </article>
     </section>
 
     <section id="earlier">
-      <p class="eyebrow">Earlier</p>
-      <h2 class="section-title">Where it started</h2>
+      <h2 class="section-title">Earlier roles</h2>
       <ol class="timeline">
         <li>
           <span class="when">2020 – 2021</span>
@@ -337,7 +336,7 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
     </section>
 
     <section id="approach">
-      <p class="eyebrow">How I work</p>
+      <h2 class="section-title">How I work</h2>
       <div class="two">
         <div>
           <h3>Growth plans that the company needs too</h3>
@@ -360,9 +359,8 @@ h2.section-title { font-size: clamp(1.5rem, 2.8vw, 1.9rem); font-weight: 600; le
     </section>
 
     <section id="contact" class="closing">
-      <p class="eyebrow">What I’m looking for</p>
-      <h2>Leading engineering in a small company, close to product</h2>
-      <p>Depending on what a company needs, that could mean managing and growing the engineering team, or working where product and technology meet, turning what users and the business need into work a team can build. I’ve done both at Equilibrium Markets.</p>
+      <h2>What I’m looking for</h2>
+      <p>I want to lead engineering in a small company, close to product. Depending on what a company needs, that could mean managing and growing the engineering team, or working where product and technology meet, turning what users and the business need into work a team can build. I’ve done both at Equilibrium Markets.</p>
       <p>I’ve built two things from zero. Now I want to join an existing team and product for the long term, and put that experience into helping them grow.</p>
       <p>I want to work on something I believe is useful, in a team small enough that my work is visible. Remote, UK time +2 hours, based in Sofia.</p>
       <div class="links">
